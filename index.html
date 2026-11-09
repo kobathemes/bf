@@ -160,6 +160,12 @@ h2 .ser{color:var(--red);font-size:1.08em}
 .safe{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 18px;margin-top:18px;font-size:13px;color:var(--mute)}
 .guar{margin-top:26px;text-align:left;border-radius:20px;padding:20px 22px;background:rgba(227,34,43,.08);border:1px solid rgba(227,34,43,.35);font-size:15px;color:var(--mute)}
 .guar b{color:var(--txt);display:block;margin-bottom:4px;font-size:16px}
+.vid{position:relative;max-width:960px;margin:0 auto;border-radius:28px;padding:2px;background:linear-gradient(140deg,var(--red),rgba(255,255,255,.15) 40%,rgba(255,255,255,.05) 60%,var(--red));box-shadow:0 50px 140px -40px rgba(227,34,43,.75)}
+.vid-in{position:relative;aspect-ratio:16/9;border-radius:26px;overflow:hidden;background:#000}
+.vid-in iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vid-tag{position:absolute;top:-16px;left:28px;display:inline-flex;align-items:center;gap:8px;background:#fff;color:#000;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;border-radius:100px;padding:7px 14px}
+.vid-tag i{width:8px;height:8px;border-radius:50%;background:var(--red);animation:blink 1.4s infinite}
+@media(max-width:600px){.vid{border-radius:20px}.vid-in{border-radius:18px}.vid-tag{left:16px}}
 /* faq */
 .faq{max-width:780px;margin:0 auto;border-top:1px solid var(--line)}
 .q{border-bottom:1px solid var(--line)}
@@ -339,6 +345,24 @@ footer a:hover{color:#fff}
           <span class="v">Bonus</span>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="engine" style="padding-top:30px">
+  <div class="wrap">
+    <div class="sh center rv">
+      <span class="k">See it for yourself</span>
+      <h2 class="big" style="margin-top:16px">Watch the Engine <span class="ser">build</span> a product.</h2>
+      <p>No editing tricks. This is the Digital Product Engine doing the work, from niche to a finished product people actually want to buy.</p>
+    </div>
+    <div class="vid rv d1">
+      <div class="vid-in"><iframe src="https://www.youtube-nocookie.com/embed/ye3W9s7K3PI?autoplay=1&mute=1&loop=1&playlist=ye3W9s7K3PI&playsinline=1&rel=0&modestbranding=1" title="Digital Product Engine in action" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+      <span class="vid-tag"><i></i> Live demo</span>
+    </div>
+    <div class="center rv d2" style="text-align:center;margin-top:40px">
+      <a href="https://kotrynabass.podia.com/black-friday-bundle-2026/buy?offer_id=6714846" class="btn js-buy">I want the Engine · 87€ →</a>
+      <p style="color:var(--mute);font-size:14px;margin-top:14px">Included in the Black Friday Bundle, together with 6 more pieces.</p>
     </div>
   </div>
 </section>
