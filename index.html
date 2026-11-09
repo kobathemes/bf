@@ -166,7 +166,9 @@ h2 .ser{color:var(--red);font-size:1.08em}
 .vid-tag{position:absolute;top:-16px;left:28px;display:inline-flex;align-items:center;gap:8px;background:#fff;color:#000;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;border-radius:100px;padding:7px 14px}
 .vid-tag i{width:8px;height:8px;border-radius:50%;background:var(--red);animation:blink 1.4s infinite}
 @media(max-width:600px){.vid{border-radius:20px}.vid-in{border-radius:18px}.vid-tag{left:16px}}
-.mephoto{position:relative;width:100%;max-width:330px;justify-self:center}
+.mephoto{position:relative;width:100%;max-width:230px;justify-self:center}
+@media(max-width:900px){.mephoto{max-width:220px;margin:0 auto}}
+.mp-card{font-size:12px!important;padding:10px 14px!important}.mp-card b{font-size:22px!important}
 .mp-img{border-radius:220px 220px 24px 24px;overflow:hidden;aspect-ratio:4/5;border:1px solid rgba(255,255,255,.18);box-shadow:0 40px 120px -30px rgba(227,34,43,.6)}
 .mp-img img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
 .mp-card{position:absolute;right:-14px;bottom:28px;background:#fff;color:#000;border-radius:16px;padding:14px 18px;font-size:13.5px;font-weight:600;line-height:1.35;transform:rotate(-3deg);box-shadow:0 20px 40px -10px rgba(0,0,0,.6)}
@@ -186,6 +188,17 @@ h2 .ser{color:var(--red);font-size:1.08em}
 .sl-b.prev{left:-10px}.sl-b.next{right:-10px}
 .swipe{text-align:center;color:var(--mute);font-size:13px;margin-top:4px}
 @media(max-width:600px){.shot{width:230px}.sl-b{display:none}.mp-card{right:8px}}
+.snd{position:absolute;right:18px;bottom:18px;z-index:4;border:0;cursor:pointer;background:var(--red);color:#fff;font:700 13px/1 Inter,sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:12px 18px;border-radius:100px;box-shadow:0 10px 30px -6px rgba(227,34,43,.8);animation:sndp 2s ease-in-out infinite}
+@keyframes sndp{50%{transform:scale(1.06)}}
+.snd.off{display:none}
+.vplay{all:unset;cursor:pointer;position:absolute;inset:0;display:block}
+.vplay img{width:100%;height:100%;object-fit:cover;filter:brightness(.8);transition:filter .3s,transform .6s}
+.vplay:hover img{filter:brightness(.95);transform:scale(1.02)}
+.vplay .pb{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:96px;height:96px;border-radius:50%;background:var(--red);display:grid;place-items:center;box-shadow:0 0 0 12px rgba(227,34,43,.25),0 20px 60px rgba(227,34,43,.7);animation:pbp 2s ease-in-out infinite}
+@keyframes pbp{50%{transform:translate(-50%,-50%) scale(1.07)}}
+.vplay .pb i{width:0;height:0;border-left:28px solid #fff;border-top:17px solid transparent;border-bottom:17px solid transparent;margin-left:7px}
+.vplay .pl{position:absolute;left:50%;top:calc(50% + 72px);transform:translateX(-50%);font:700 13px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#fff;white-space:nowrap;text-shadow:0 2px 10px rgba(0,0,0,.6)}
+@media(max-width:600px){.vplay .pb{width:72px;height:72px}.vplay .pb i{border-left-width:22px;border-top-width:13px;border-bottom-width:13px}.vplay .pl{top:calc(50% + 56px);font-size:11px}}
 /* faq */
 .faq{max-width:780px;margin:0 auto;border-top:1px solid var(--line)}
 .q{border-bottom:1px solid var(--line)}
@@ -376,7 +389,7 @@ footer a:hover{color:#fff}
       <p>No editing tricks. This is the Digital Product Engine doing the work, from niche to a finished product people actually want to buy.</p>
     </div>
     <div class="vid rv d1">
-      <div class="vid-in"><iframe src="https://www.youtube-nocookie.com/embed/ye3W9s7K3PI?autoplay=1&mute=1&loop=1&playlist=ye3W9s7K3PI&playsinline=1&rel=0&modestbranding=1" title="Digital Product Engine in action" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+      <div class="vid-in" id="vidIn"><button class="vplay" id="vplay" type="button" aria-label="Play video with sound"><img src="https://i.ytimg.com/vi/ye3W9s7K3PI/maxresdefault.jpg" alt="Digital Product Engine in action" loading="lazy" onerror="this.src='https://i.ytimg.com/vi/ye3W9s7K3PI/hqdefault.jpg'"><span class="pb"><i></i></span><span class="pl">Watch with sound</span></button></div>
       <span class="vid-tag"><i></i> Real demo</span>
     </div>
     <div class="center rv d2" style="text-align:center;margin-top:40px">
@@ -521,6 +534,13 @@ var DEADLINE = '2026-11-11T23:59:59+02:00';      // early access ends (Vilnius t
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -40px 0px'});
   document.querySelectorAll('.rv,.st').forEach(function(el){io.observe(el)});
   var sh=document.getElementById('shots');document.querySelectorAll('.sl-b').forEach(function(b){b.addEventListener('click',function(){sh.scrollBy({left:(b.classList.contains('next')?1:-1)*270,behavior:'smooth'})})});
+
+  var vp=document.getElementById('vplay'),vi=document.getElementById('vidIn');
+  if(vp){vp.addEventListener('click',function(){
+    vi.innerHTML='<iframe id="ytv" src="https://www.youtube-nocookie.com/embed/ye3W9s7K3PI?autoplay=1&mute=0&playsinline=1&rel=0&modestbranding=1&cc_load_policy=0&iv_load_policy=3&enablejsapi=1" title="Digital Product Engine in action" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+    var f=document.getElementById('ytv');
+    f.addEventListener('load',function(){var n=0,t=setInterval(function(){f.contentWindow.postMessage(JSON.stringify({event:'command',func:'unloadModule',args:['captions']}),'*');f.contentWindow.postMessage(JSON.stringify({event:'command',func:'unloadModule',args:['cc']}),'*');if(++n>8)clearInterval(t)},700)});
+  });}
   document.querySelectorAll('.q button').forEach(function(b){b.addEventListener('click',function(){b.parentNode.classList.toggle('open')})});
   var st=document.getElementById('sticky'),sb=document.getElementById('stickyBtn'),ins=document.getElementById('inside');
   function onS(){var y=window.scrollY;st.classList.toggle('show',y>650);if(ins&&y>ins.offsetTop+ins.offsetHeight-400){sb.href=CHECKOUT;sb.textContent='Get it now'}else{sb.href='#offer';sb.textContent='Get it'}}
