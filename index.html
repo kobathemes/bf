@@ -29,6 +29,9 @@ body::before{content:"";position:fixed;inset:-50%;z-index:100;pointer-events:non
 /* top */
 .bar{background:var(--red);color:#fff;text-align:center;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:9px 12px}
 .bar span{opacity:.75}
+.bar .bt{display:inline-block;font-family:'Archivo Black';font-weight:400;font-size:15px;letter-spacing:.06em;background:#000;color:#fff;border-radius:6px;padding:3px 9px 2px;margin:0 4px;font-variant-numeric:tabular-nums;min-width:96px}
+.bar .bp{opacity:.9}
+@media(max-width:600px){.bar{font-size:11px;letter-spacing:.12em}.bar .bt{font-size:13px;min-width:84px}}
 nav{position:sticky;top:0;z-index:50;background:rgba(5,5,5,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--red);color:#fff;font-weight:700;font-size:14px;letter-spacing:.12em;text-transform:uppercase;padding:19px 34px;border-radius:100px;position:relative;overflow:hidden;transition:transform .2s,box-shadow .3s;box-shadow:0 0 0 1px rgba(255,255,255,.15) inset,0 18px 50px -12px rgba(227,34,43,.65);white-space:nowrap}
@@ -264,7 +267,7 @@ footer a:hover{color:#fff}
 </head>
 <body>
 
-<div class="bar">Black Friday early access · <span>87€ until 11 November</span></div>
+<div class="bar"><span class="bl" id="barLab">Early access ends in</span> <b class="bt" id="barT">00:00:00</b> <span class="bp">· 87€</span></div>
 
 <nav><div class="wrap">
   <a href="#top" class="logo" aria-label="Kotryna Bass">KOTRYNA <b>BASS</b></a>
@@ -550,7 +553,8 @@ var DEADLINE = '2026-11-11T23:59:59+02:00';      // early access ends (Vilnius t
   function p(n){return(n<10?'0':'')+n}
   function tick(){var now=Date.now(),target=now<start?start:end;lab.textContent=now<start?'Early access opens in':(now<end?'Early access ends in':'Early access has ended');var t=Math.max(0,target-now),s=Math.floor(t/1000);
     document.getElementById('dd').textContent=p(Math.floor(s/86400));document.getElementById('hh').textContent=p(Math.floor(s%86400/3600));
-    document.getElementById('mm').textContent=p(Math.floor(s%3600/60));document.getElementById('ss').textContent=p(s%60)}
+    document.getElementById('mm').textContent=p(Math.floor(s%3600/60));document.getElementById('ss').textContent=p(s%60);
+    var bl=document.getElementById('barLab'),bt=document.getElementById('barT');if(bl){bl.textContent=lab.textContent;var d=Math.floor(s/86400),hh=Math.floor(s%86400/3600);bt.textContent=(d>0?d+'d ':'')+p(hh)+':'+p(Math.floor(s%3600/60))+':'+p(s%60);bt.style.display=(now>=end)?'none':''}}
   tick();setInterval(tick,1000);
 })();
 </script>
