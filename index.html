@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>The Black Friday Bundle · Kotryna Bass</title>
-<meta name="description" content="The biggest launch of the year. Everything I have, in one bundle. 147€ or 2 payments of 77€.">
+<meta name="description" content="The biggest launch of the year. Everything I have, in one bundle. 147€ or 2 payments of 77€. Doors close 18 November and won't reopen until January 2027.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -208,6 +208,14 @@ h2 .ser{color:var(--red);font-size:1.08em}
 .fab h3{font-family:'Archivo Black';font-weight:400;text-transform:uppercase;font-size:20px;line-height:1.1;margin-bottom:8px}
 .fab h3 .ser{font-size:1.15em}
 .fab p{color:var(--mute);font-size:15px;line-height:1.55;margin:0}
+.closing{text-align:left;margin:4px 0 22px;padding:14px 16px;border-radius:14px;background:rgba(227,34,43,.12);border:1px solid rgba(227,34,43,.45);font-size:14.5px;line-height:1.5;color:var(--mute)}
+.closing b{color:#fff}
+.lastbox{max-width:860px;margin:0 auto;text-align:center;border-radius:30px;padding:54px 40px;background:radial-gradient(120% 90% at 50% 0%,rgba(227,34,43,.3),transparent 65%),#0b0b0b;border:1px solid rgba(227,34,43,.5)}
+.lastbox h2{font-size:clamp(34px,5vw,64px);margin:16px 0 22px}
+.lastbox p{color:var(--mute);font-size:18px;max-width:600px;margin:0 auto 14px}
+.lastbox p b{color:#fff}
+.lastbox .btn{margin-top:14px}
+@media(max-width:600px){.lastbox{padding:38px 20px;border-radius:24px}.lastbox p{font-size:16.5px}}
 /* faq */
 .faq{max-width:780px;margin:0 auto;border-top:1px solid var(--line)}
 .q{border-bottom:1px solid var(--line)}
@@ -272,7 +280,7 @@ footer a:hover{color:#fff}
 </head>
 <body>
 
-<div class="bar">The Black Friday Bundle · <span>147€ or 2 × 77€</span></div>
+<div class="bar">The Black Friday Bundle · <span>doors close 18 November</span></div>
 
 <nav><div class="wrap">
   <a href="#top" class="logo" aria-label="Kotryna Bass">KOTRYNA <b>BASS</b></a>
@@ -288,7 +296,7 @@ footer a:hover{color:#fff}
       <p class="lead rv d2">Everything I have, in <b>one bundle</b>. The system, the AI tools, the automations and personal support from me. Built for the woman who is done waiting for "next year".</p>
       <div class="hero-cta rv d3">
         <a href="#offer" class="btn">I'm ready for this →</a>
-        <small><b>147€</b> · or 2 payments of 77€</small>
+        <small><b>147€</b> · or 2 payments of 77€ · doors close 18 November</small>
       </div>
     </div>
     <div class="portrait rv d2">
@@ -438,11 +446,23 @@ footer a:hover{color:#fff}
   </div>
 </section>
 
+<section class="last" style="padding:40px 0 20px">
+  <div class="wrap">
+    <div class="lastbox rv">
+      <span class="k" style="color:#ff6b72">Last chance this year</span>
+      <h2 class="big">This is the <span class="ser">last</span> time this year.</h2>
+      <p>The doors close on <b>18 November at 23:59</b> (Vilnius time). After that, the Black Friday Bundle is gone and I won't open the doors again until <b>January 2027</b>.</p>
+      <p>If you want to finish this year with your own digital product live and selling, now is the time to join.</p>
+      <a href="#offer" class="btn">I'm in, show me the price →</a>
+    </div>
+  </div>
+</section>
+
 <section id="offer">
   <div class="orb" style="left:50%;right:auto;top:10%;transform:translateX(-50%);opacity:.5"></div>
   <div class="wrap">
     <div class="sh center rv">
-      <span class="k">Doors are open</span>
+      <span class="k">Doors close 18 November at 23:59</span>
       <h2 class="big" style="margin-top:16px">Your <span class="ser">yes</span> moment.</h2>
     </div>
     <div class="offer rv">
@@ -461,6 +481,9 @@ footer a:hover{color:#fff}
         <span class="k" style="color:var(--red2)">Black Friday price</span>
         <div class="price">147€</div>
         <p class="price-note">One payment, <b>or 2 monthly payments of 77€</b>. You choose at checkout.</p>
+        <div class="closing"><b>Doors close 18 November at 23:59</b> (Vilnius time). After that, the bundle is gone and the doors stay closed until January 2027.</div>
+        <p class="k" id="cdLabel" style="margin-bottom:12px">Doors close in</p>
+        <div class="cd" id="cd"><div><b id="dd">00</b><small>days</small></div><div><b id="hh">00</b><small>hrs</small></div><div><b id="mm">00</b><small>min</small></div><div><b id="ss">00</b><small>sec</small></div></div>
         <a href="https://kotrynabass.podia.com/black-friday-bundle-2026/buy?offer_id=6714846" class="btn js-buy">Yes, I want it all · 147€</a>
         <div class="rev1"><span>★★★★★</span>"Made $5,000 within my first month."<small>Sarah, started from zero</small></div>
         <div class="safe"><span>✓ Instant access</span><span>✓ Secure checkout</span><span>✓ Yours forever</span></div>
@@ -499,6 +522,7 @@ footer a:hover{color:#fff}
   <div class="wrap">
     <div class="sh center rv"><h2 class="big">Quick <span class="ser">answers</span></h2></div>
     <div class="faq">
+      <div class="q"><button>Will the doors open again soon?<i></i></button><div class="a"><p>No. Doors close on 18 November at 23:59 (Vilnius time), and they stay closed until January 2027. If you want in this year, this is your chance.</p></div></div>
       <div class="q"><button>Is this for complete beginners?<i></i></button><div class="a"><p>Yes. The mini course gets you a win on day one, and Launch HQ tells you the next step every day. If you can type a message, you can do this.</p></div></div>
       <div class="q"><button>I already bought one of these. Is it still worth it?<i></i></button><div class="a"><p>If you have one piece, this bundle adds the rest. Message me and I'll tell you honestly if it makes sense for you.</p></div></div>
       <div class="q"><button>What if I don't get any sales?<i></i></button><div class="a"><p>Then I've got you. Do every step, and if you're still not getting sales within 60 days, message me on Instagram @kotrynabass, show me your work, and I'll walk you through it personally.</p></div></div>
@@ -513,7 +537,7 @@ footer a:hover{color:#fff}
   <div class="wrap" style="position:relative">
     <span class="k rv">The biggest launch of the year</span>
     <h2 class="big rv d1" style="margin-top:18px">This time next year<br>you'll <span class="ser">thank</span> yourself.</h2>
-    <p class="rv d2">Or you'll still be thinking about it. Seven pieces, one price, and personal support from me. Your call.</p>
+    <p class="rv d2">Or you'll still be thinking about it. Doors close 18 November at 23:59 and stay closed until January 2027. Seven pieces, one price, and personal support from me. Your call.</p>
     <a href="https://kotrynabass.podia.com/black-friday-bundle-2026/buy?offer_id=6714846" class="btn js-buy rv d3">Get the bundle · 147€ →</a>
   </div>
 </section>
@@ -531,8 +555,7 @@ footer a:hover{color:#fff}
 <script>
 /* ===== SETTINGS: change these two lines ===== */
 var CHECKOUT = 'https://kotrynabass.podia.com/black-friday-bundle-2026/buy?offer_id=6714846';                          // Podia checkout link
-var START    = '2026-11-12T00:00:00+02:00';      // 117€ price starts (Vilnius time)
-var DEADLINE = '2026-11-14T23:59:59+02:00';      // 117€ ends, price goes to 147€ (Vilnius time)
+var DEADLINE = '2026-11-18T23:59:59+02:00';      // doors close (Vilnius time)
 /* ============================================ */
 (function(){
   document.querySelectorAll('.js-buy').forEach(function(a){a.href=CHECKOUT});
@@ -541,6 +564,15 @@ var DEADLINE = '2026-11-14T23:59:59+02:00';      // 117€ ends, price goes to 1
   var sh=document.getElementById('shots');document.querySelectorAll('.sl-b').forEach(function(b){b.addEventListener('click',function(){sh.scrollBy({left:(b.classList.contains('next')?1:-1)*270,behavior:'smooth'})})});
 
 
+
+  (function(){var end=new Date(DEADLINE).getTime(),lab=document.getElementById('cdLabel'),bl=document.getElementById('barLab'),bt=document.getElementById('barT');
+  function p(n){return(n<10?'0':'')+n}
+  function tick(){var now=Date.now(),t=Math.max(0,end-now),x=Math.floor(t/1000),done=now>=end;
+    var L=done?'Doors are closed until January 2027':'Doors close in';lab.textContent=L;
+    document.getElementById('dd').textContent=p(Math.floor(x/86400));document.getElementById('hh').textContent=p(Math.floor(x%86400/3600));
+    document.getElementById('mm').textContent=p(Math.floor(x%3600/60));document.getElementById('ss').textContent=p(x%60);
+    }
+  tick();setInterval(tick,1000);})();
   document.querySelectorAll('.q button').forEach(function(b){b.addEventListener('click',function(){b.parentNode.classList.toggle('open')})});
   var st=document.getElementById('sticky'),sb=document.getElementById('stickyBtn'),ins=document.getElementById('inside');
   function onS(){var y=window.scrollY;st.classList.toggle('show',y>650);if(ins&&y>ins.offsetTop+ins.offsetHeight-400){sb.href=CHECKOUT;sb.textContent='Get it now'}else{sb.href='#offer';sb.textContent='Get it'}}
